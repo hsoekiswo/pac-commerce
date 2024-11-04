@@ -71,3 +71,16 @@ class Member:
             return print(f"Hasil perhitungan Euclidean Distance dari user {self.username} adalah (Platinum: {platinum_pred}, Gold: {gold_pred}, Silver: {silver_pred}) \n Kesimpulan Tier: {tier_prediction}")
         else:
             return print("Akun anda sudah teregistrasi")
+        
+    def calculate_price(self, list_price):
+        total_price = sum(list_price)
+
+        if self.tier == 'Platinum':
+            discount = 0.15
+        elif self.tier == 'Gold':
+            discount = 0.1
+        elif self.tier == 'Silver':
+            discount = 0.08
+        
+        final_price = total_price - (total_price * discount)
+        return print(f"Total harga setelah diskon adalah {final_price}")
