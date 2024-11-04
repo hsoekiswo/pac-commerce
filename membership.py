@@ -17,3 +17,10 @@ class Member:
         headers = self.info_headers[0:3]
         
         return print(tabulate(benefit, headers))
+    
+    def show_requirements(self):
+        requirements = [[i[0], i[3], i[4]] for i in self.membership_info]
+        
+        headers = [self.info_headers[i] for i in [0,3,4]]
+
+        return print(tabulate(requirements, headers))
