@@ -67,6 +67,7 @@ class Member:
 
         if(self.tier not in self.membership_tiers):
             self.tier = tier_prediction
+            self.users_data[len(self.users_data)] = [self.username, self.tier]
             return print(f"Hasil perhitungan Euclidean Distance dari user {self.username} adalah (Platinum: {platinum_pred}, Gold: {gold_pred}, Silver: {silver_pred}) \n Kesimpulan Tier: {tier_prediction}")
         else:
             return print("Akun anda sudah teregistrasi")
